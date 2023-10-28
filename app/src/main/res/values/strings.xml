@@ -2,6 +2,9 @@
     <string name="app_name">VaKon</string>
     <string name="va_kon_github_link">github.com/ValeriiKoniushenko</string>
 
+    <string name="open_menu">Open navigation menu</string>
+    <string name="close_menu">Close navigation menu</string>
+
     <string name="main_menu_item_home">Home</string>
     <string name="main_menu_item_gallery">Gallery</string>
     <string name="main_menu_item_repositories">Repositories</string>
