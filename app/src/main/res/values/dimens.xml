@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_header_height">200dp</dimen>
+    <dimen name="menu_header_paddings">10dp</dimen>
+    <dimen name="menu_header_topic_size">32sp</dimen>
+    <dimen name="menu_header_link_size">14sp</dimen>
+</resources>

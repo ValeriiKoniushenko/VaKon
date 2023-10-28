@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">VaKon</string>
+    <string name="va_kon_github_link">github.com/ValeriiKoniushenko</string>
+
+    <string name="main_menu_item_home">Home</string>
+    <string name="main_menu_item_gallery">Gallery</string>
+    <string name="main_menu_item_repositories">Repositories</string>
+    <string name="main_menu_item_profile">Profile</string>
+    <string name="main_menu_item_profile_login">Log In</string>
+    <string name="main_menu_item_profile_logout">Log Out</string>
+    <string name="main_menu_item_profile_signup">Sign Up</string>
+    <string name="main_menu_item_communications">Communications</string>
+    <string name="main_menu_item_communications_phone">Phone</string>
+    <string name="main_menu_item_communications_telegram">Telegram</string>
+    <string name="main_menu_item_communications_viber">Viber</string>
+    <string name="main_menu_item_communications_email">E-Mail</string>
+    <string name="main_menu_item_misc">Misc</string>
+    <string name="main_menu_item_misc_rate_us">Rate us</string>
+    <string name="main_menu_item_misc_share">Share</string>
+    <string name="main_menu_item_misc_location">Our location</string>
+
+</resources>
