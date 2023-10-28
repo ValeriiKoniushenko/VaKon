@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/item_home"
+            android:title="@string/main_menu_item_home"
+            android:icon="@drawable/ic_home">
+        </item>
+
+        <item android:id="@+id/item_gallery"
+            android:title="@string/main_menu_item_gallery"
+            android:icon="@drawable/ic_gallery">
+        </item>
+
+        <item android:id="@+id/item_repositories"
+            android:title="@string/main_menu_item_repositories"
+            android:icon="@drawable/ic_repositories">
+        </item>
+
+        <item android:title="@string/main_menu_item_profile">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/item_profile_login"
+                        android:title="@string/main_menu_item_profile_login"
+                        android:icon="@drawable/ic_baseline_login">
+                    </item>
+                    <item android:id="@+id/item_profile_logout"
+                        android:title="@string/main_menu_item_profile_logout"
+                        android:icon="@drawable/ic_baseline_logout">
+                    </item>
+                    <item android:id="@+id/item_profile_signup"
+                        android:title="@string/main_menu_item_profile_signup"
+                        android:icon="@drawable/ic_app_registration">
+                    </item>
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="@string/main_menu_item_communications">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/main_menu_item_communications_phone"
+                        android:title="@string/main_menu_item_profile_login"
+                        android:icon="@drawable/ic_baseline_login">
+                    </item>
+                    <item android:id="@+id/main_menu_item_communications_telegram"
+                        android:title="@string/main_menu_item_communications_phone"
+                        android:icon="@drawable/ic_baseline_phone_24">
+                    </item>
+                    <item android:id="@+id/main_menu_item_communications_viber"
+                        android:title="@string/main_menu_item_communications_viber"
+                        android:icon="@drawable/ic_viber">
+                    </item>
+                    <item android:id="@+id/main_menu_item_communications_email"
+                        android:title="@string/main_menu_item_communications_email"
+                        android:icon="@drawable/ic_email">
+                    </item>
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="@string/main_menu_item_misc">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item android:id="@+id/main_menu_item_misc_rate_us"
+                        android:title="@string/main_menu_item_misc_rate_us"
+                        android:icon="@drawable/ic_rate_us">
+                    </item>
+                    <item android:id="@+id/main_menu_item_misc_share"
+                        android:title="@string/main_menu_item_misc_share"
+                        android:icon="@drawable/ic_share">
+                    </item>
+                    <item android:id="@+id/main_menu_item_location"
+                        android:title="@string/main_menu_item_misc_location"
+                        android:icon="@drawable/ic_location">
+                    </item>
+                </group>
+            </menu>
+        </item>
+    </group>
+</menu>
