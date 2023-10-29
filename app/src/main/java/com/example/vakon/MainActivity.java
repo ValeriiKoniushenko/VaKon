@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
-    public void changeFragment(int id)
+    public boolean changeFragment(int id)
     {
         Fragment fragment = null;
 
@@ -92,14 +93,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new HomeFragment();
             navigationView.setCheckedItem(R.id.item_home);
         }
+        if (id == R.id.main_menu_item_location)
+        {
+            fragment = new LocationFragment();
+            navigationView.setCheckedItem(R.id.main_menu_item_location);
+        }
 
         if (fragment != null)
         {
+            closeNavigationBar();
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.main_fragment, fragment);
             fragmentTransaction.commit();
+            return true;
         }
+        return false;
     }
 
     @Override
@@ -113,13 +122,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         final int id = item.getItemId();
-        if (id == R.id.item_home)
-        {
-            closeNavigationBar();
-            changeFragment(R.id.item_home);
-            return true;
-        }
-        else if (id == R.id.main_menu_item_misc_share)
+
+        if (id == R.id.main_menu_item_misc_share)
         {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
@@ -130,7 +134,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             closeNavigationBar();
             return true;
         }
-        return false;
+        else if (id == R.id.main_menu_item_communications_phone || id == R.id.main_menu_item_communications_viber)
+        {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + getResources().getString(R.string.phone_number)));
+            startActivity(intent);
+
+            closeNavigationBar();
+            return true;
+        }
+        else if (id == R.id.main_menu_item_communications_telegram)
+        {
+            String url = getResources().getString(R.string.link_to_telegram);
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+
+            closeNavigationBar();
+            return true;
+        }
+        else if (id == R.id.main_menu_item_communications_email)
+        {
+            String[] TO = { getResources().getString(R.string.email) };
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setData(Uri.parse("mailto:"));
+            emailIntent.setType("text/plain");
+
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hello Valerii");
+
+            try {
+                startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                finish();
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(MainActivity.this,
+                        "There is no email client installed.", Toast.LENGTH_SHORT).show();
+            }
+
+            closeNavigationBar();
+            return true;
+        }
+        else
+        {
+            return changeFragment(id);
+        }
     }
 
     @Override

@@ -21,6 +21,11 @@
     <string name="main_menu_item_misc_rate_us">Rate us</string>
     <string name="main_menu_item_misc_share">Share</string>
     <string name="main_menu_item_misc_location">Our location</string>
+
+    <string name="link_to_telegram">https://t.me/markmoran24</string>
+    <string name="phone_number">+380–(666) 445-607</string>
+    <string name="email">Valerii.Koniushenko@gmail.com</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
