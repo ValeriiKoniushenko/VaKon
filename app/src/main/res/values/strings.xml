@@ -26,6 +26,8 @@
     <string name="phone_number">+380–(666) 445-607</string>
     <string name="email">Valerii.Koniushenko@gmail.com</string>
 
+    <string name="location_text">Our organisation locating by the next address: Ukraine, Ivano-Frankivsk</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
