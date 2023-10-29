@@ -6,6 +6,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Rect;
@@ -80,6 +83,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
+    public void changeFragment(int id)
+    {
+        Fragment fragment = null;
+
+        if (id == R.id.item_home)
+        {
+            fragment = new HomeFragment();
+            navigationView.setCheckedItem(R.id.item_home);
+        }
+
+        if (fragment != null)
+        {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.main_fragment, fragment);
+            fragmentTransaction.commit();
+        }
+    }
+
     @Override
     public void onBackPressed() {
         if (!closeNavigationBar())
@@ -94,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.item_home)
         {
             closeNavigationBar();
+            changeFragment(R.id.item_home);
             return true;
         }
         else if (id == R.id.main_menu_item_misc_share)
