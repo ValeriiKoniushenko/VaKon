@@ -39,12 +39,12 @@
             <menu>
                 <group android:checkableBehavior="single">
                     <item android:id="@+id/main_menu_item_communications_phone"
-                        android:title="@string/main_menu_item_profile_login"
-                        android:icon="@drawable/ic_baseline_login">
-                    </item>
-                    <item android:id="@+id/main_menu_item_communications_telegram"
                         android:title="@string/main_menu_item_communications_phone"
                         android:icon="@drawable/ic_baseline_phone_24">
+                    </item>
+                    <item android:id="@+id/main_menu_item_communications_telegram"
+                        android:title="@string/main_menu_item_communications_telegram"
+                        android:icon="@drawable/ic_telegram">
                     </item>
                     <item android:id="@+id/main_menu_item_communications_viber"
                         android:title="@string/main_menu_item_communications_viber"
